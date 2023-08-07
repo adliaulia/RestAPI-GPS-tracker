@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const db = require("./app/models")
 const app = express();
+require('dotenv').config()
 
 const corsOptions = {
     origin: "*"
@@ -26,5 +27,8 @@ db.mongoose.connect(db.url, mongooseConfig)
 // memanggil routes gps
 require("./app/routes/gps.routes")(app);
 
-const PORT = process.env.PORT || 8000;
+// memanggil routes lain (led)
+require("./app/routes/led.routes")(app);
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

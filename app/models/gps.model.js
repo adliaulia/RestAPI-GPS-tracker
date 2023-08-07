@@ -5,7 +5,8 @@ module.exports = mongoose => {
             tipe_gps: String,
             tempat_gps: String,
             tanggal_sync: String,
-            long_lat: String,
+            lat_long: String,
+            maps_link: String,
             altitude: String,
         }, {
             timestamps: true
